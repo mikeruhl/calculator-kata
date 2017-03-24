@@ -27,5 +27,13 @@ namespace CalculatorServices.Tests
             int result = calculator.Add("1,2");
             Assert.Equal(3, result);
         }
+
+        [Fact]
+        public void Add_MultipleNumbers_ReturnsSum()
+        {
+            var calculator = new Calculator();
+            int result = calculator.Add("1,2,3,4");
+            Assert.Equal(10, result);
+        }
     }
 }
