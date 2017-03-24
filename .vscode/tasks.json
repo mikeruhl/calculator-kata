@@ -1,25 +1,13 @@
 {
     "version": "0.1.0",
-    "command": "dotnet",
+    "command": "gulp",
     "isShellCommand": true,
-    "args": [],
     "tasks": [
         {
-            "taskName": "build",
-            "args": [
-                "${workspaceRoot}\\CalculatorServices.Tests\\CalculatorServices.Tests.csproj"
-            ],
+            "taskName": "default",
             "isBuildCommand": true,
-            "problemMatcher": "$msCompile"
-        },
-        {
-            "taskName": "test",
-            "args": [
-                "${workspaceRoot}\\CalculatorServices.Tests\\CalculatorServices.Tests.csproj"
-            ],
-            "isTestCommand": true,
             "showOutput": "always",
-            "problemMatcher": "$msCompile"
+            "isBackground": true
         }
     ]
 }
