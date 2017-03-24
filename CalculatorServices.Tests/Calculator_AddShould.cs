@@ -1,3 +1,4 @@
+using System;
 using Xunit;
 
 namespace CalculatorServices.Tests
@@ -44,6 +45,18 @@ namespace CalculatorServices.Tests
             var calculator = new Calculator();
             int result = calculator.Add("//;\n2;3");
             Assert.Equal(5, result);
+        }
+
+        [Fact]
+        public void Add_NegativeNumber_ThrowsException()
+        {
+            var calculator = new Calculator();
+            var exception = Record.Exception(
+                () => calculator.Add("-1")
+            );
+            Assert.NotNull(exception);
+            Assert.IsType<ArgumentException>(exception);
+            Assert.Equal("Negatives not allowed", exception.Message);
         }
     }
 }
