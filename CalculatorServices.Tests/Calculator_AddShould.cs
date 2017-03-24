@@ -1,4 +1,3 @@
-using System;
 using Xunit;
 
 namespace CalculatorServices.Tests
@@ -10,6 +9,7 @@ namespace CalculatorServices.Tests
         {
             var calculator = new Calculator();
             int result = calculator.Add("");
+            Assert.Equal(0, result);
         }
     }
 }
