@@ -19,5 +19,13 @@ namespace CalculatorServices.Tests
             int result = calculator.Add("1");
             Assert.Equal(1, result);
         }
+
+        [Fact]
+        public void Add_TwoNumbers_ReturnsSum()
+        {
+            var calculator = new Calculator();
+            int result = calculator.Add("1,2");
+            Assert.Equal(3, result);
+        }
     }
 }
