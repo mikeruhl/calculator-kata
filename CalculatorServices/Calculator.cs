@@ -7,7 +7,8 @@
             if (value == string.Empty)
                 return 0;
             
-            var values = value.Split(',');
+            var delimiters = new char[] {',', '\n'};
+            var values = value.Split(delimiters);
             
             int sum = 0;
             foreach(var numberText in values)
