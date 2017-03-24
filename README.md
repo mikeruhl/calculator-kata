@@ -1,8 +1,10 @@
-#TDD with .NET Core
+TDD with .NET Core
+==================
 
-##My First String Calculator Kata with VS Code
+My First String Calculator Kata with VS Code
 
-####Initial Steps
+Initial Steps
+-------------
 
 1. md CalculatorServices && cd CalculatorServices
 2. dotnet new classlib
@@ -15,7 +17,8 @@
    Good example of [.gitignore] (https://github.com/aspnet/Docs/blob/master/.gitignore)
 9. git init && git add --all && git commit -m "initial commit"
 
-####Setup VSCode for Manual Unit Testing
+Setup VSCode for Manual Unit Testing
+------------------------------------
 
 1. Ctl+Shift+P
 2. Type 'Tasks'
@@ -43,7 +46,8 @@
 
 6. Now you can run the Xunit tests with the shortcut and see results in output window
 
-####(Optional) Setup VSCode for Automated Unit Testing
+(Optional) Setup VSCode for Automated Unit Testing
+--------------------------------------------------
 
 I am using gulp for this (must also have NodeJs/NPM installed first)
 
