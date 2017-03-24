@@ -11,31 +11,46 @@ namespace CalculatorServices
             if (value == string.Empty)
                 return 0;
 
+            value = ParseDelimiters(value);
+            var values = ParseValues(value);
+            int sum = SumValues(values);
+
+            return sum;
+        }
+
+        private string ParseDelimiters(string value)
+        {
             if (value.StartsWith("//"))
             {
                 delimiters.Add(value[2]);
-                value = value.Substring(4);   
+                value = value.Substring(4);
             }
-            
-            var values = value.Split(delimiters.ToArray());
 
+            return value;
+        }
+
+        private string[] ParseValues(string value)
+        {
+            return value.Split(delimiters.ToArray());
+        }
+
+        private static int SumValues(string[] values)
+        {
             int sum = 0;
             foreach (var numberText in values)
             {
                 var number = int.Parse(numberText);
-                if (number < 0)
-                    throw new ArgumentException("Negatives not allowed");
+                HandleNegatives(number);
                 sum += number;
             }
 
             return sum;
         }
 
-        private List<char> ParseDelimiters(string value)
+        private static void HandleNegatives(int number)
         {
-            
-
-            return delimiters;
+            if (number < 0)
+                throw new ArgumentException("Negatives not allowed");
         }
     }
 }
