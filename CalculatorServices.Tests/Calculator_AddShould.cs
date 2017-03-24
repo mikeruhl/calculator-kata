@@ -37,5 +37,13 @@ namespace CalculatorServices.Tests
             int result = calculator.Add("1\n2\n3");
             Assert.Equal(6, result);
         }
+
+        [Fact]
+        public void Add_CustomDelimiter_ReturnsSum()
+        {
+            var calculator = new Calculator();
+            int result = calculator.Add("//;\n2;3");
+            Assert.Equal(5, result);
+        }
     }
 }
