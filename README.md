@@ -2,7 +2,7 @@
 
 ##My First String Calculator Kata
 
-####Steps
+####Initial Steps
 
 1. md CalculatorServices && cd CalculatorServices
 2. dotnet new classlib
@@ -14,4 +14,31 @@
 8. echo $null >> .gitignore
    Good example of [.gitignore] (https://github.com/aspnet/Docs/blob/master/.gitignore)
 9. git init && git add --all && git commit -m "initial commit"
-10. 
+
+####Setup VSCode for Testing
+
+1. Ctl+Shift+P
+2. Type 'Tasks'
+3. Click on 'Configure Task Runner' (file called tasks.json under .vscode folder)
+4. add test task to file
+
+    {
+        "taskName": "test",
+        "args": [
+            "${workspaceRoot}\\CalculatorServices.Tests\\CalculatorServices.Tests.csproj"
+        ],
+        "isTestCommand": true,
+        "showOutput": "always",
+        "problemMatcher": "$msCompile"
+    }
+
+5. File > Preferences > Keyboard Shortcuts
+
+    [{
+        "key": "ctrl+shift+t",
+        "command": "workbench.action.tasks.test",
+        "when": "editorTextFocus"
+    }
+    ]
+
+6. Now you can run the Xunit tests with the shortcut and see results in output window
